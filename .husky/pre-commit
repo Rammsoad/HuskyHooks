@@ -1,11 +1,11 @@
-# #!/bin/sh
-# . "$(dirname "$0")/_/husky.sh"
-# exec dotnet test "StringLibraryTest\StringLibraryTest.csproj"
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+exec dotnet test "StringLibraryTest\StringLibraryTest.csproj"
 
-# if [ $? -ne 0 ]; then
-# echo "Tests must pass before commit!"
-# exit 1
-# fi
+if [ $? -ne 0 ]; then
+echo "Tests must pass before commit!"
+exit 1
+fi
 
 
 ## husky task runner examples -------------------
